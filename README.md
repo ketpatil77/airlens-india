@@ -1,6 +1,29 @@
 # AIRLENS INDIA
 
-AIRLENS INDIA is a React and TypeScript web app focused on air quality awareness across India. It presents AQI data through an interactive map, city comparisons, trend sections, and visual storytelling.
+AIRLENS INDIA is a public-awareness web experience focused on air quality across India. It turns AQI data into a clearer, more visual product through an interactive map, city comparison panels, health context, trend sections, and action-oriented messaging.
+
+## What This Project Does
+
+AIRLENS INDIA helps users understand:
+
+- how polluted different Indian cities are
+- how air quality compares across locations
+- what pollution levels mean in practical health terms
+- which sources contribute to air pollution
+- why AQI trends matter over time
+
+The application is designed as an informative front-end experience rather than a generic dashboard. It combines data storytelling, motion, map-based exploration, and responsive UI patterns.
+
+## Main Features
+
+- Interactive India AQI map with city markers
+- City comparison and drill-down sections
+- AQI strip and live visual summaries
+- Health impact and advisory sections
+- Pollution source breakdowns
+- Trend visualizations for AQI patterns
+- Command palette and supporting UI overlays
+- Responsive React UI built for local development and deployment
 
 ## Tech Stack
 
@@ -10,27 +33,24 @@ AIRLENS INDIA is a React and TypeScript web app focused on air quality awareness
 - Tailwind CSS
 - Framer Motion
 - Recharts
+- React Simple Maps
 
-## Requirements
+## Getting Started
+
+### Requirements
 
 - Node.js 18 or newer
 - npm 9 or newer
 
-## How To Start
-
-### Option 1: Windows launcher
-
-Run:
+### Option 1: Start with the Windows launcher
 
 ```bat
 start.bat
 ```
 
-This checks Node.js, verifies the project, and starts the local development server.
+This validates the local environment and starts the development server.
 
-### Option 2: Manual start
-
-Run:
+### Option 2: Start manually
 
 ```bash
 npm install
@@ -43,15 +63,24 @@ Then open:
 http://127.0.0.1:5173
 ```
 
-## Build
+## Available Scripts
 
-To create a production build:
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
+
+## Production Build
+
+Create a production bundle:
 
 ```bash
 npm run build
 ```
 
-To preview the production build locally:
+Preview the production build locally:
 
 ```bash
 npm run preview
@@ -61,28 +90,23 @@ npm run preview
 
 ```text
 src/
-  components/
-  data/
-  hooks/
-  lib/
-  services/
-  styles/
-  types/
-public/
-start.bat
+  components/   # UI, map, chart, layout, and section components
+  data/         # AQI and supporting content data
+  hooks/        # Reusable React hooks
+  lib/          # App utilities and configuration
+  services/     # Data access helpers
+  styles/       # Global styling
+  types/        # Shared TypeScript types
+public/         # Static assets
+start.bat       # Windows launcher
 ```
 
-## Notes For GitHub
+## GitHub Notes
 
-- The project display name is `AIRLENS INDIA`.
-- `package.json` uses `airlens-india`, which is the valid package-style identifier.
-- GitHub repository names cannot contain spaces, so use `airlens-india` or `AIRLENS-INDIA` when creating the repo.
+- Project name: `AIRLENS INDIA`
+- Package name: `airlens-india`
+- GitHub repository names cannot contain spaces, so the repository uses `airlens-india`
 
-## Scripts
+## Purpose
 
-```bash
-npm run dev
-npm run build
-npm run preview
-npm run lint
-```
+This repository is intended to present AIRLENS INDIA as a polished front-end project for air quality awareness, mapping, and environmental storytelling.
