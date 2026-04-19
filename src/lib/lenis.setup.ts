@@ -1,35 +1,39 @@
 import Lenis from "@studio-freight/lenis";
-import { gsap, ScrollTrigger } from "@/lib/gsap.config";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export type LenisController = {
-  lenis: Lenis;
-  destroy: () => void;
-};
+export function initLenis() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return null;
+  }
 
-export const setupLenis = (): LenisController => {
   const lenis = new Lenis({
-    duration: 1.1,
+    lerp: 0.08,
+    duration: 0.75,
+    easing: (t: number) => 1 - Math.pow(1 - t, 3),
+    orientation: "vertical",
     smoothWheel: true,
-    smoothTouch: false,
-    lerp: 0.09,
+    wheelMultiplier: 0.9,
   });
 
-  lenis.on("scroll", () => {
+  let rafId = 0;
+
+  const onScroll = () => {
     ScrollTrigger.update();
-  });
-
-  const update = (time: number): void => {
-    lenis.raf(time * 1000);
   };
 
-  gsap.ticker.add(update);
-  gsap.ticker.lagSmoothing(0);
+  const raf = (time: number) => {
+    lenis.raf(time);
+    rafId = window.requestAnimationFrame(raf);
+  };
+
+  lenis.on("scroll", onScroll);
+  rafId = window.requestAnimationFrame(raf);
 
   return {
-    lenis,
-    destroy: () => {
-      gsap.ticker.remove(update);
+    destroy() {
+      window.cancelAnimationFrame(rafId);
+      lenis.off("scroll", onScroll);
       lenis.destroy();
     },
   };
-};
+}

@@ -1,19 +1,8 @@
+import { useInView as useFramerInView } from "framer-motion";
 import { useRef } from "react";
-import { useInView as useMotionInView } from "framer-motion";
 
-type InViewOptions = {
-  once?: boolean;
-  margin?: string;
-  amount?: number | "some" | "all";
-};
-
-export const useInView = (options: InViewOptions = {}) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useMotionInView(ref, {
-    once: options.once ?? true,
-    margin: options.margin,
-    amount: options.amount ?? 0.3,
-  });
-
+export function useInView(amount = 0.3) {
+  const ref = useRef(null);
+  const inView = useFramerInView(ref, { once: true, amount });
   return { ref, inView };
-};
+}
