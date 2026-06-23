@@ -9,6 +9,10 @@ Interactive air-quality platform focused on India. AIRLENS INDIA turns AQI, poll
 - Forecast, pollutant, and health context in one product
 - Public-facing UX built beyond plain dashboard patterns
 
+## Documentation
+
+- [Architecture overview](docs/architecture.md)
+
 ## Project Overview
 
 The goal of this project is to:
