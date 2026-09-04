@@ -1,0 +1,1 @@
+import{j as e,m as o}from"./framer-BkJMyAwL.js";import{f as r}from"./index-FOU2zCLv.js";function s({children:t,className:i}){return e.jsx(o.p,{initial:{opacity:0,y:16,filter:"blur(8px)"},whileInView:{opacity:1,y:0,filter:"blur(0px)"},viewport:{once:!0,amount:.35},transition:{duration:.7,ease:[.16,1,.3,1]},className:r(i),children:t})}export{s as T};
